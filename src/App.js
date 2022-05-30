@@ -1,9 +1,11 @@
 import './App.css';
+import TodoList from './components/TodoList';
 
 function App() {
   return (
     <div className="App">
-      Hello World!
+      <h4>Todo-app</h4>
+      <TodoList></TodoList>
     </div>
   );
 }
