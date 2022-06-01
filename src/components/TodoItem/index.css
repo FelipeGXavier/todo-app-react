@@ -1,0 +1,46 @@
+.todo-item {
+  padding: 10px;
+  margin-top: 15px;
+  background-color: blanchedalmond;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);
+}
+
+.todo-item > h4 {
+  margin: 5px;
+}
+
+.low {
+  background-color: #20c997;
+  border-radius: 4px;
+  padding: 2px;
+  color: white;
+}
+
+.medium {
+  background-color: #fd7e14;
+  border-radius: 4px;
+  padding: 2px;
+  color: white;
+}
+
+.high {
+  background-color: #d9534f;
+  border-radius: 4px;
+  padding: 2px;
+  color: white;
+}
+
+.paragraph {
+  margin: 2px;
+}
+
+.description {
+  font-style: italic;
+}
+
+.delete-btn {
+  cursor: pointer;
+  float: right;
+}

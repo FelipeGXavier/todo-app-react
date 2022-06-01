@@ -1,7 +1,8 @@
 import { useState, useRef } from "react";
-import PanelCreateTodo from "./PanelCreateTodo";
-import TodoItem from "./TodoItem";
+import PanelCreateTodo from "../PanelCreateTodo/PanelCreateTodo";
+import TodoItem from "../TodoItem/TodoItem";
 import React from "react";
+import "./index.css";
 
 export default function TodoList(props) {
   const [items, setItem] = useState([]);
@@ -10,8 +11,19 @@ export default function TodoList(props) {
 
   const transformItems = (elements) => {
     return elements.map((el) => {
-      return <TodoItem todo={el}></TodoItem>;
+      return (
+        <TodoItem
+          key={el.id}
+          deleteTodoItem={deleteTodoItem}
+          todo={el}
+        ></TodoItem>
+      );
     });
+  };
+
+  const deleteTodoItem = (id) => {
+    const newItems = items.filter((item) => item.id !== id);
+    setItem(newItems);
   };
 
   let rows = [];
@@ -25,19 +37,20 @@ export default function TodoList(props) {
   }
 
   return (
-    <main>
-      <div>
+    <main className="container">
+      <div className="panel">
+        <h4 className="title">Todo-app</h4>
         <PanelCreateTodo addItem={setItem}></PanelCreateTodo>
-      </div>
-      <div>
-        <form>
+        <form className="search">
           <input
+            className="search-bar"
             ref={searchRef}
             type="text"
             name="search"
             placeholder="Search"
           />
           <button
+            className="btn-search"
             onClick={(e) => {
               e.preventDefault();
               const searchValue = searchRef.current.value;
